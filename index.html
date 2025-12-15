@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarbCoach - Elite Race Nutrition</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <header>
+            <h1>CarbCoach</h1>
+            <p class="subtitle">Personalized Race-Day Energy Planning</p>
+        </header>
+
+        <main>
+            <form id="carb-form">
+                <section class="form-section">
+                    <h2>🏃 Runner Profile</h2>
+                    <div class="input-group">
+                        <label for="experience">Experience Level</label>
+                        <select id="experience" name="experience">
+                            <option value="beginner">Beginner</option>
+                            <option value="intermediate">Intermediate</option>
+                            <option value="experienced">Experienced</option>
+                            <option value="elite">Elite</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="gi-issues">Known GI Sensitivities</label>
+                        <input type="text" id="gi-issues" name="gi-issues"
+                            placeholder="e.g., sensitive to caffeine, fructose...">
+                    </div>
+                    <div class="input-group">
+                        <label for="fuel-pref">Fuel Preferences</label>
+                        <input type="text" id="fuel-pref" name="fuel-pref"
+                            placeholder="e.g., Gels, liquid carbs, real food">
+                    </div>
+                </section>
+
+                <section class="form-section">
+                    <h2>🏁 Race Details</h2>
+                    <div class="input-group">
+                        <label for="distance">Distance</label>
+                        <select id="distance" name="distance">
+                            <option value="5k">5K</option>
+                            <option value="10k">10K</option>
+                            <option value="half-marathon">Half Marathon</option>
+                            <option value="marathon">Marathon</option>
+                            <option value="ultra">Ultra (50k+)</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="target-time">Target Time</label>
+                        <input type="text" id="target-time" name="target-time" placeholder="e.g., 3:45:00">
+                    </div>
+                    <div class="input-group">
+                        <label for="weather">Expected Weather</label>
+                        <input type="text" id="weather" name="weather" placeholder="e.g., 20°C, 80% humidity">
+                    </div>
+                </section>
+
+                <section class="form-section">
+                    <h2>🔋 Pre-Race Context</h2>
+                    <div class="input-group">
+                        <label for="sleep">Sleep (Last Night)</label>
+                        <input type="text" id="sleep" name="sleep" placeholder="e.g., 7 hours, restless">
+                    </div>
+                    <div class="input-group">
+                        <label for="last-meal">Last Meal Timing</label>
+                        <input type="text" id="last-meal" name="last-meal" placeholder="e.g., 3 hours before start">
+                    </div>
+                </section>
+
+                <section class="form-section">
+                    <h2>📜 Historical Data (Optional)</h2>
+                    <textarea id="history" name="history" rows="4"
+                        placeholder="Paste past race logs or notes here..."></textarea>
+                </section>
+
+                <button type="submit" class="generate-btn">Generate Plan</button>
+            </form>
+
+            <div id="output-container" class="hidden">
+                <h2>Your Race Plan</h2>
+                <div id="plan-display" class="markdown-body"></div>
+                <button id="reset-btn" class="secondary-btn">Start Over</button>
+            </div>
+        </main>
+    </div>
+    <script type="module" src="main.js"></script>
+</body>
+
+</html>
