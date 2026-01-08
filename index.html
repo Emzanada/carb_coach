@@ -16,6 +16,10 @@
         <header>
             <h1>CarbCoach</h1>
             <p class="subtitle">Personalized Race-Day Energy Planning</p>
+            <nav class="app-nav">
+                <button id="nav-plan" class="nav-btn active">Plan Generator</button>
+                <button id="nav-review" class="nav-btn">Post-Run Review</button>
+            </nav>
         </header>
 
         <main>
@@ -84,6 +88,38 @@
                 </section>
 
                 <button type="submit" class="generate-btn">Generate Plan</button>
+            </form>
+
+            <form id="review-form" class="hidden">
+                <section class="form-section">
+                    <h2>📝 Post-Run Review</h2>
+                    <p class="section-desc">Help CarbCoach learn from your run.</p>
+
+                    <div class="input-group">
+                        <label for="review-date">Date & Run Name</label>
+                        <input type="text" id="review-date" name="review-date"
+                            placeholder="e.g., Sunday Long Run - Oct 15">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="review-rating">How did the plan work? (1-5)</label>
+                        <select id="review-rating" name="review-rating">
+                            <option value="5">5 - Perfect</option>
+                            <option value="4">4 - Good</option>
+                            <option value="3">3 - Okay</option>
+                            <option value="2">2 - Issues</option>
+                            <option value="1">1 - Failed</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="review-notes">Notes / adjustments needed?</label>
+                        <textarea id="review-notes" name="review-notes" rows="3"
+                            placeholder="e.g., Ran out of energy at mile 10, felt bloated..."></textarea>
+                    </div>
+
+                    <button type="submit" class="generate-btn review-btn">Submit Review</button>
+                </section>
             </form>
 
             <div id="output-container" class="hidden">

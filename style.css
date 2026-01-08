@@ -25,7 +25,40 @@ body {
 
 header {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
+}
+
+.app-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.nav-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.nav-btn:hover {
+    color: var(--accent-color);
+}
+
+.nav-btn.active {
+    color: var(--accent-color);
+    border-bottom-color: var(--accent-color);
+}
+
+.section-desc {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
 }
 
 h1 {
@@ -73,7 +106,9 @@ label {
     color: var(--text-secondary);
 }
 
-input, select, textarea {
+input,
+select,
+textarea {
     width: 100%;
     padding: 0.75rem;
     background-color: var(--bg-color);
@@ -86,7 +121,9 @@ input, select, textarea {
     transition: border-color 0.2s;
 }
 
-input:focus, select:focus, textarea:focus {
+input:focus,
+select:focus,
+textarea:focus {
     outline: none;
     border-color: var(--accent-color);
     box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.2);
@@ -137,12 +174,36 @@ input:focus, select:focus, textarea:focus {
     border: 1px solid var(--border-color);
     border-radius: 12px;
     padding: 2rem;
+    padding: 2rem;
     animation: fadeIn 0.5s ease-out;
 }
 
+.history-badge {
+    background-color: rgba(56, 189, 248, 0.1);
+    /* Low opacity accent */
+    border: 1px solid var(--accent-color);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+}
+
+.history-badge ul {
+    margin: 0.5rem 0 0 0;
+    padding-left: 1.5rem;
+    color: var(--text-secondary);
+}
+
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Markdown Styles for Plan Display */
@@ -152,7 +213,8 @@ input:focus, select:focus, textarea:focus {
     margin: 1rem 0;
 }
 
-.markdown-body th, .markdown-body td {
+.markdown-body th,
+.markdown-body td {
     border: 1px solid var(--border-color);
     padding: 0.75rem;
     text-align: left;
